@@ -11,10 +11,10 @@ const { label, index = null } = Astro.props;
             {
               index && (
                 <>
-                  <p class="text-6xl font-medium flex items-center">
+                  <p class="font-oswald text-6xl font-black flex items-center">
                     {index}
                   </p>
-                  <p class="lg:text-3xl text-lg">{label}</p>
+                  <p class="font-oswald lg:text-3xl text-lg">{label}</p>
                 </>
               )
             }
@@ -29,7 +29,7 @@ const { label, index = null } = Astro.props;
   <div
     class="group-focus:max-h-screen max-h-0 shadow-card rounded-b-3xl bg-zinc-100 group-focus:bg-lime px-4 overflow-hidden transition ease duration-500"
   >
-    <p class="text-justify text-black p-10">
+    <p class="font-nunito font-light text-2xl text-justify text-black p-10">
       <slot />
     </p>
   </div>

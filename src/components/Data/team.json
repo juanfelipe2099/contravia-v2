@@ -27,27 +27,27 @@
     "process":
     [
         {
-            "label": "Consultation",
+            "label": "Diagnóstico",
+            "content": "En la etapa inicial de diagnóstico, nos sumergimos en la realidad de nuestros clientes, escuchando atentamente sus desafíos y dolores puntuales. Ya sea una caída en las ventas, una falta de adopción tecnológica o problemas estructurales en su modelo de negocio, nos sentamos cara a cara con ellos para comprender de primera mano sus preocupaciones y experiencias. Esta fase es fundamental para identificar las verdaderas causas subyacentes y sentar las bases para una solución personalizada y efectiva.."
+        },
+        {
+            "label": "Investigación",
             "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
         },
         {
-            "label": "Research",
+            "label": "Estrategia",
             "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
         },
         {
-            "label": "Implementation",
+            "label": "Implementación",
             "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
         },
         {
-            "label": "Optimization",
+            "label": "Análisis",
             "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
         },
         {
-            "label": "Reporting",
-            "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
-        },
-        {
-            "label": "Improvement",
+            "label": "Optimización",
             "content": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
         }
     ]
