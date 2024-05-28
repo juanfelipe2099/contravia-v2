@@ -8,7 +8,7 @@ if (Astro.request.method === 'POST') {
   try{
     // Getting posted data from our contact form
     const data = await Astro.request.formData();
-    const name = data.get('subject');
+    const name = data.get('name');
     const email = data.get('email');
     const message = data.get('message');
 
@@ -19,7 +19,7 @@ if (Astro.request.method === 'POST') {
       to: 'juan.alvarez@contravia.co', // Change to your recipient
       from: 'juan.alvarez@contravia.co', // Change to your verified sender
       subject: `Contact form submission from ${name}`,
-      text: 'fuck',
+      text: 'Holi',
     }
     await sendGrid.send(msg).then(() => {
       console.log('Email sent')
@@ -31,8 +31,6 @@ if (Astro.request.method === 'POST') {
     console.error(error);
   }
 }
-
-
 ---
 <Container>
 <div class="relative flex flex-col items-center md:flex-row">
@@ -41,7 +39,7 @@ if (Astro.request.method === 'POST') {
 
 <div class="relative flex flex-col items-center md:flex-row my-6 bg-zinc-100 rounded-[45px]">
     <div class="row items-center py-12 px-4 md:px-20 md:w-8/12 md:py-10">
-        <form action="#" class="space-y-8 md:w-full">
+        <form id="contact-form" class="space-y-8 md:w-full">
             <div class="flex">
                 <div class="flex items-center me-4">
                     <input id="inline-radio" type="radio" value="" name="inline-radio-group" class="w-4 h-4 text-lime bg-black border-black focus:ring-lime">
@@ -54,15 +52,15 @@ if (Astro.request.method === 'POST') {
             </div>
             <div>
                 <label for="email" class="block mb-2 text-base font-medium text-black">Email</label>
-                <input type="email" id="email" class="shadow-sm bg-white border text-black text-base rounded-lg focus:ring-black focus:border-black block w-full p-2.5" placeholder="Tu correo" required>
+                <input type="email" id="email" name="email" class="shadow-sm bg-white border text-black text-base rounded-lg focus:ring-black focus:border-black block w-full p-2.5" placeholder="Tu correo" required>
             </div>
             <div>
                 <label for="subject" class="block mb-2 text-base font-medium text-black">Nombre</label>
-                <input type="text" id="subject" class="block p-3 w-full text-base text-black bg-white rounded-lg border shadow-sm focus:ring-black focus:border-black" placeholder="Tu nombre" required>
+                <input type="text" id="name" name="name" class="block p-3 w-full text-base text-black bg-white rounded-lg border shadow-sm focus:ring-black focus:border-black" placeholder="Tu nombre" required>
             </div>
             <div class="sm:col-span-2">
                 <label for="message" class="block mb-2 text-base font-medium text-black dark:text-gray-400">Cuentanos sobre tu empresa</label>
-                <textarea id="message" rows="6" class="block p-2.5 w-full text-base text-black bg-white rounded-lg shadow-sm border focus:ring-black focus:border-black" placeholder="O la cerveza de su preferencia."></textarea>
+                <textarea id="message" name="message" rows="6" class="block p-2.5 w-full text-base text-black bg-white rounded-lg shadow-sm border focus:ring-black focus:border-black" placeholder="O la cerveza de su preferencia."></textarea>
             </div>
             <button type="submit" class="w-full py-5 bg-zinc-900 rounded-[14px] justify-center gap-2.5 inline-flex">
                 <div class="text-center text-white text-xl font-normal leading-7">Enviar</div>
@@ -74,4 +72,7 @@ if (Astro.request.method === 'POST') {
     </div>
 </div>
 
+
+
+  
 </Container>
