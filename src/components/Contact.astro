@@ -1,44 +1,15 @@
 ---
 import Container from "./Container.astro"
 import Topic from "./Topic.astro";
-import sendGrid from '@sendgrid/mail';
-sendGrid.setApiKey( import.meta.env.SENDGRID_API_KEY );
-
-if (Astro.request.method === 'POST') {
-  try{
-    // Getting posted data from our contact form
-    const data = await Astro.request.formData();
-    const name = data.get('name');
-    const email = data.get('email');
-    const message = data.get('message');
-
-    // TODO: Do not forget to do validation and error handling over received data from your contact form.
-
-    // Sending email
-    const msg = {
-      to: 'juan.alvarez@contravia.co', // Change to your recipient
-      from: 'juan.alvarez@contravia.co', // Change to your verified sender
-      subject: `Contact form submission from ${name}`,
-      text: 'Holi',
-    }
-    await sendGrid.send(msg).then(() => {
-      console.log('Email sent')
-    }).catch((error) => {
-      console.error(error)
-    });
-
-  } catch (error) {
-    console.error(error);
-  }
-}
 ---
 <Container>
 <div class="relative flex flex-col items-center md:flex-row">
     <Topic title="Hablemos" description="Algunos formularios son más efectivos que otros, si no te gusta WhatsApp, esta es la mejor forma." />
 </div>
 
-<div class="relative flex flex-col items-center md:flex-row my-6 bg-zinc-100 rounded-[45px]">
+<div class="relative flex flex-col items-center md:flex-row my-3 bg-black rounded-[45px]">
     <div class="row items-center py-12 px-4 md:px-20 md:w-8/12 md:py-10">
+    <!--
         <form id="contact-form" class="space-y-8 md:w-full">
             <div class="flex">
                 <div class="flex items-center me-4">
@@ -66,9 +37,15 @@ if (Astro.request.method === 'POST') {
                 <div class="text-center text-white text-xl font-normal leading-7">Enviar</div>
             </button>
         </form>
+     -->
+     
+     <script type="text/javascript" src="https://opnform.com/widgets/iframeResize.min.js"></script>
+     <iframe style="border:none;width:100%;" id="form-hablemos-irgbyf" src="https://opnform.com/forms/hablemos-irgbyf"></iframe>
+     <script type="text/javascript">iFrameResize({log: false, checkOrigin: false}, "#form-hablemos-irgbyf");</script>
+
     </div>
-    <div class="hidden md:grid md:justify-items-end md:w-4/12 md:py-2">
-        <img src="./clients/contact.svg" alt="c" width="80%">
+    <div class="">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://lottie.host/1b78702a-a1c4-4275-8ee4-fd5f57f7be2c/0y6iodTY9k.json" background="#" speed="1" style="width: 400px; height: 400px" loop autoplay direction="1" mode="normal"></lottie-player>
     </div>
 </div>
 
